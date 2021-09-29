@@ -28,6 +28,13 @@ public class ChessMatch {
 		return mat;
 	}
 	
+	//Permite que a aplicação perceba/imprima as posições possíveis de movimentação das peças
+	public boolean[][] possibleMoves(ChessPosition sourcePosition){
+		Position position = sourcePosition.toPosition();
+		validateSourcePosition(position);
+		return board.piece(position).possibleMoves();
+	}
+	
 	//Lógica para mover a peça do lugar
 	public ChessPiece performeChessMove(ChessPosition sourcePosition, ChessPosition targetPosition) {
 		Position source = sourcePosition.toPosition();

@@ -20,7 +20,7 @@ public class Program {
 			try {
 				UI.clearScreen();
 				
-				UI.printBoard(chessMatch.getpieces());
+				UI.printMatch(chessMatch);
 				
 				System.out.println();
 				System.out.println("Source: ");
@@ -30,10 +30,10 @@ public class Program {
 				//Limpa a tela
 				UI.clearScreen();
 				//Imprime de novo o tabuleiro com os movimentos possíveis mostrando onde a peça pode ser movida.
-				UI.printBoard(chessMatch.getpieces(), possibleMoves);
+				UI.printBoard(chessMatch.getPieces(), possibleMoves);
 				
 				System.out.println();
-				System.out.println("Target: ");
+				System.out.print("Target: ");
 				ChessPosition target = UI.readChessPosition(sc);
 				
 				ChessPiece capturedPiece = chessMatch.performeChessMove(source, target);
